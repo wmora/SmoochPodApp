@@ -2,11 +2,9 @@
 //  ViewController.swift
 //  SmoochPodApp
 //
-//  Created by Will Mora on 2017-07-26.
-//  Copyright © 2017 Will Mora. All rights reserved.
-//
 
 import UIKit
+import Smooch
 
 class ViewController: UIViewController {
 
@@ -20,6 +18,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func showConversationButtonDidTouchUpInside(_ sender: Any) {
+        Smooch.show()
+    }
+    
 }
 

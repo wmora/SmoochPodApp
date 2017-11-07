@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Smooch
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Smooch.initWith(SKTSettings(appId: "YOUR_APP_ID")) { (error: Error?, userInfo: [AnyHashable : Any]?) in
+            if let error = error {
+                print("Error initializing Smooch \(error)")
+                print("Error code: \(userInfo!["SKTErrorCodeIdentifier"] as! String)")
+                print("Error description \(userInfo!["SKTErrorDescriptionIdentifier"] as! String)")
+            }
+        }
         return true
     }
 
